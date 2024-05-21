@@ -7,3 +7,6 @@ Création de la BDD :
 Insertion des produits:
 
 ![image](https://github.com/ThomyG07/FullStack/assets/93085354/90ab6723-6cfb-44aa-b7a7-67e85b3057e3)
+## BACKEND - API 
+### SERVEUR WEB
+![image](https://github.com/ThomyG07/FullStack/assets/93085354/25fd25a3-eab3-4807-be51-25a569958497)
