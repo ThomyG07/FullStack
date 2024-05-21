@@ -13,14 +13,10 @@ public class ProductsController {
     {
 
     }
-    static public  ArrayList<Product> findAll(WebServerContext context )
+    static public void findAll(WebServerContext context, ArrayList<Product> products )
     {
         WebServerResponse response = context.getResponse();
-        response.ok("Tous les produits");
-        return null;
-
-
-
+        response.json(products);
     }
 
 }
