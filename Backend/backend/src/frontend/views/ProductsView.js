@@ -1,24 +1,22 @@
 import { ProductsService } from "../services/ProductsService.js";
 export class ProductsView
 {
-    ProductsView()
-    {  this.displayProduct()
+    constructor()
+    {  this.displayProducts()
 
 
 
     }
     displayProducts()
     {
-        let data = ProductsService.findAll().then((data) => data.forEach((item) => {
-            console.log(data)
+        let data = ProductsService.findAll().then((data) =>data.forEach((item) => {
             this.displayProduct(item)   
-        }))
-    
-    
+        }
+        )
+    )   
     }
     displayProduct(data)
     {
-        console.log(data)
         const div = document.querySelector("div")
         const element = document.createElement("div");
         element.classList.add("products");
@@ -29,13 +27,19 @@ export class ProductsView
         par1.innerText = data.name;
 
         const par2 = document.createElement("p")
-        par1.innerText = data.owner;
+        par2.innerText = data.owner;
 
         const par3 = document.createElement("p")
-        par1.innerText = data.bid;
+        par3.innerText = data.bid;
 
         const bouton = document.createElement("button")
         bouton.innerText = 'Enchérir';
+
+        element.appendChild(par1);
+        element.appendChild(par2);
+        element.appendChild(par3);
+        element.appendChild(bouton);
+
     }
 
 
