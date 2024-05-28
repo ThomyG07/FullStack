@@ -17,4 +17,5 @@ Insertion des produits:
 ### Fetch
 ![image](https://github.com/ThomyG07/FullStack/assets/93085354/bb948b2f-00f6-44fe-b005-cd99c205b261)
 ![image](https://github.com/ThomyG07/FullStack/assets/93085354/fcbebd58-06d1-46ab-82ce-dcf836715d89)
+![image](https://github.com/ThomyG07/FullStack/assets/93085354/6eadc311-532c-479a-9f5e-b50095c1031b)
 
