@@ -43,4 +43,21 @@ public class ProductsDAO {
          }
         return products;
     }
+
+    public  void bid(int id) throws SQLException
+    {
+        PreparedStatement myStatement = polyBayDatabase.prepareStatement("UPDATE `product` SET `bid` = 50 WHERE `id` = ? ");
+         
+        try
+        {
+           myStatement.setInt(1, id);
+           myStatement.execute();
+
+        }
+        catch(SQLException e)
+        {
+           System.err.println("Erreur SQL selection table : " + e.getMessage());
+           
+        }
+    }
 }

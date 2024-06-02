@@ -9,6 +9,7 @@ import dao.ProductsDAO;
 import models.Product;
 import webserver.WebServerResponse;
 import webserver.WebServerContext;
+import webserver.WebServerRequest;
 
 public class ProductsController {
     public ProductsController()
@@ -22,6 +23,38 @@ public class ProductsController {
         WebServerResponse response = context.getResponse();
         response.json(products);
         return products;
+    }
+
+    static public void bid(WebServerContext context)
+    {
+        ProductsDAO productsDAO;
+        try {
+            productsDAO = new ProductsDAO();
+            WebServerRequest request = context.getRequest();
+            int id =  Integer.parseInt(request.getParam("productId"));
+            System.err.println(id);
+            productsDAO.bid(id);
+            try
+            {
+            WebServerResponse response = context.getResponse();
+            response.ok("ok");
+            }
+            catch(Exception e)
+            {
+                WebServerResponse response = context.getResponse();
+                response.serverError("erreur server");
+
+                
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+           
+        }
+        
+        
+
+
     }
 
 }
