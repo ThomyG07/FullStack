@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import javax.naming.Context;
 
+import com.google.gson.JsonObject;
+
 import dao.ProductsDAO;
 import models.Product;
 import webserver.WebServerResponse;
@@ -32,12 +34,12 @@ public class ProductsController {
             productsDAO = new ProductsDAO();
             WebServerRequest request = context.getRequest();
             int id =  Integer.parseInt(request.getParam("productId"));
-            System.err.println(id);
             productsDAO.bid(id);
             try
             {
-            WebServerResponse response = context.getResponse();
-            response.ok("ok");
+                String message = "{\"productid\": \""+id+"\"}";
+                System.out.println(message);
+                context.getSSE().emit("Channelbid", message);
             }
             catch(Exception e)
             {

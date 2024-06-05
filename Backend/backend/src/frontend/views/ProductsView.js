@@ -39,7 +39,16 @@ export class ProductsView
         element.appendChild(par2);
         element.appendChild(par3);
         element.appendChild(bouton);
+        bouton.dataset.id = data.id;
+        bouton.addEventListener("click",  () => ProductsService.bid(bouton.dataset.id).then((resultat) => {if(resultat ==true) location.reload();
+        }))
 
+    }
+
+    updateBid(data)
+    {
+        console.log(data)
+        
     }
 
 

@@ -18,6 +18,26 @@ export class ProductsService
 
 
     }
+    static async bid(id)
+    {
+        let url ="http://localhost:8080/bid/" + id 
+        const response = await fetch(url, {
+            method: "post"})
+        if(response.status ===200)
+        {
+            return true
+
+
+        }
+        else
+        {
+
+            return false
+        }
+
+
+
+    }
 
 
 }
